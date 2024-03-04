@@ -26,8 +26,10 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
+                <!--Buttons to select game-->
                 <Button Grid.Column="0"
-                        Text="Addition"/>
+                        Text="Addition"
+                        Clicked="OnGameChosen"/>
                 <Button Grid.Column="1"
                         Text="Subtraction"/>
                 <Button Grid.Column="2"
