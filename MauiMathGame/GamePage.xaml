@@ -5,7 +5,7 @@
              Title="GamePage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to Game Page!"
+            Text="[Binding GameType]"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
