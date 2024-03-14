@@ -5,8 +5,33 @@
              Title="GamePage">
     <VerticalStackLayout>
         <Label 
-            Text="{Binding GameType}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            x:Name="QuestionLabel"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <!--Allow user to input answer-->
+        <Entry
+            x:Name="Answer"
+            HorizontalOptions="Center">
+        </Entry>
+
+        <!--Button to submit answer-->
+        <Button 
+            x:Name="SubmitAnswer"
+            Text="Answer"
+            Clicked="OnAnswerSubmitted"
+            HorizontalOptions="Center"/>
+
+        <!--Label that holds message to inform user if their answer is correct-->
+        <Label 
+            x:Name="AnswerLabel"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <!--Label that shows when the game is finished-->
+        <Label 
+            x:Name="GameOverLabel"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>
