@@ -46,4 +46,9 @@ public partial class GamePage : ContentPage
         // Replace QuestionLabel text with the math equation to solve
         QuestionLabel.Text = $"{firstNumber} {gameOperand} {secondNumber}";
     }
+
+    private void OnAnswerSubmitted(object sender, EventArgs e)
+    {
+
+    }
 }
