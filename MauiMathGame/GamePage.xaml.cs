@@ -12,6 +12,8 @@ public partial class GamePage : ContentPage
         // Need BindingContext in order to assign constructor gameType to the incoming GameType
         // "this" assigns the BindingContext to the current instance of this class
         BindingContext = this;
+
+        CreateNewQuestion();
     }
 
     private void CreateNewQuestion()
@@ -41,6 +43,7 @@ public partial class GamePage : ContentPage
             }
         }
 
+        // Replace QuestionLabel text with the math equation to solve
         QuestionLabel.Text = $"{firstNumber} {gameOperand} {secondNumber}";
     }
 }
