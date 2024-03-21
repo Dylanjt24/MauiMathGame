@@ -5,6 +5,7 @@ public partial class GamePage : ContentPage
     public string GameType { get; set; }
     int firstNumber = 0;
     int secondNumber = 0;
+    int score = 0;
     public GamePage(string gameType)
     {
         InitializeComponent();
@@ -49,6 +50,38 @@ public partial class GamePage : ContentPage
 
     private void OnAnswerSubmitted(object sender, EventArgs e)
     {
+        // Cast user's answer into an int
+        var answer = Int32.Parse(AnswerEntry.Text);
+        var isCorrect = false;
 
+        // Checks whether or not the answer was correct based on the GameType being played
+        switch (GameType)
+        {
+            case "Addition":
+                isCorrect = answer == firstNumber + secondNumber;
+                break;
+            case "Subtraction":
+                isCorrect = answer == firstNumber - secondNumber;
+                break;
+            case "Multiplication":
+                isCorrect = answer == firstNumber * secondNumber;
+                break;
+            case "Division":
+                isCorrect = answer == firstNumber / secondNumber;
+                break;
+        }
+
+        // Call ProcessAnswer with the result from the above switch statement
+        ProcessAnswer(isCorrect);
+    }
+
+    private void ProcessAnswer(bool isCorrect)
+    {
+        // Increase score if answer is correct
+        if (isCorrect)
+            score++;
+
+        // Ternary to replace AnswerLabel text with whether or not the answer was correct
+        AnswerLabel.Text = isCorrect ? "Correct!" : "Incorrect";
     }
 }

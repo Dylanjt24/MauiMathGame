@@ -14,7 +14,7 @@
 
         <!--Allow user to input answer-->
         <Entry
-            x:Name="Answer"
+            x:Name="AnswerEntry"
             HorizontalOptions="Center">
         </Entry>
 
