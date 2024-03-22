@@ -6,6 +6,8 @@ public partial class GamePage : ContentPage
     int firstNumber = 0;
     int secondNumber = 0;
     int score = 0;
+    const int totalQuestions = 2;
+    int gamesLeft = totalQuestions;
     public GamePage(string gameType)
     {
         InitializeComponent();
@@ -73,6 +75,15 @@ public partial class GamePage : ContentPage
 
         // Call ProcessAnswer with the result from the above switch statement
         ProcessAnswer(isCorrect);
+        // Reduce num of games left after question is answered
+        gamesLeft--;
+        // Make sure the AnswerEntry is emptied when question is finished
+        AnswerEntry.Text = "";
+
+        if (gamesLeft > 0)
+            CreateNewQuestion();
+        else
+            GameOver();
     }
 
     private void ProcessAnswer(bool isCorrect)
