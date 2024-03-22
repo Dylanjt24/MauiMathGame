@@ -86,6 +86,11 @@ public partial class GamePage : ContentPage
             GameOver();
     }
 
+    private void GameOver()
+    {
+        GameOverLabel.Text = $"Game over! You got {score} out of {totalQuestions} correct.";
+    }
+
     private void ProcessAnswer(bool isCorrect)
     {
         // Increase score if answer is correct
