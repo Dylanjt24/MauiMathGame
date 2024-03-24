@@ -103,4 +103,9 @@ public partial class GamePage : ContentPage
         // Ternary to replace AnswerLabel text with whether or not the answer was correct
         AnswerLabel.Text = isCorrect ? "Correct!" : "Incorrect";
     }
+
+    private void OnBackToMenu(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new MainPage());
+    }
 }
