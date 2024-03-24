@@ -6,35 +6,47 @@
     <VerticalStackLayout
         Padding="200"
         Spacing="25">
-        <Label 
+
+        <VerticalStackLayout
+            x:Name="QuestionArea">
+            <Label 
             x:Name="QuestionLabel"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             FontSize="32"/>
 
-        <!--Allow user to input answer-->
-        <Entry
+            <!--Allow user to input answer-->
+            <Entry
             x:Name="AnswerEntry"
             HorizontalOptions="Center">
-        </Entry>
+            </Entry>
 
-        <!--Button to submit answer-->
-        <Button 
+            <!--Button to submit answer-->
+            <Button 
             x:Name="SubmitAnswer"
             Text="Answer"
             Clicked="OnAnswerSubmitted"
             HorizontalOptions="Center"/>
 
-        <!--Label that holds message to inform user if their answer is correct-->
-        <Label 
+            <!--Label that holds message to inform user if their answer is correct-->
+            <Label 
             x:Name="AnswerLabel"
             VerticalOptions="Center"
             HorizontalOptions="Center"/>
+        </VerticalStackLayout>
 
         <!--Label that shows when the game is finished-->
         <Label 
             x:Name="GameOverLabel"
             VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <!--Button to bring user back to menu after game ends-->
+        <Button 
+            IsVisible="false"
+            x:Name="BackToMenuBtn"
+            Text="Back to Menu"
+            Clicked="OnBackToMenu"
             HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

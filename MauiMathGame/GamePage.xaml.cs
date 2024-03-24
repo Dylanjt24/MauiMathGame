@@ -88,6 +88,9 @@ public partial class GamePage : ContentPage
 
     private void GameOver()
     {
+        // Make question area invisible when game ends, and make back to menu button visible
+        QuestionArea.IsVisible = false;
+        BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! You got {score} out of {totalQuestions} correct.";
     }
 
