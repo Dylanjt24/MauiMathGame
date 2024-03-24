@@ -4,11 +4,13 @@
              x:Class="MauiMathGame.GamePage"
              Title="GamePage">
     <VerticalStackLayout
-        Padding="200"
+        Padding="100"
         Spacing="25">
 
         <VerticalStackLayout
-            x:Name="QuestionArea">
+            x:Name="QuestionArea"
+            Spacing="25">
+            
             <Label 
             x:Name="QuestionLabel"
             VerticalOptions="Center"
@@ -32,14 +34,16 @@
             <Label 
             x:Name="AnswerLabel"
             VerticalOptions="Center"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            FontSize="32" />
         </VerticalStackLayout>
 
         <!--Label that shows when the game is finished-->
         <Label 
             x:Name="GameOverLabel"
             VerticalOptions="Center"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            FontSize="32" />
 
         <!--Button to bring user back to menu after game ends-->
         <Button 

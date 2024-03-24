@@ -13,7 +13,9 @@
                 FontSize="32"
                 HorizontalOptions="Center"/>
 
-            <Grid>
+            <Grid
+            RowSpacing="5"
+            ColumnSpacing="5">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
