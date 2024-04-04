@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using MauiMathGame.Models;
+using SQLite;
 
 namespace MauiMathGame.Data
 {
@@ -14,7 +15,8 @@ namespace MauiMathGame.Data
 
         public void Init()
         {
-
+            conn = new SQLiteConnection(_dbPath);
+            conn.CreateTable<Game>();  // Creates a table based on the specified Game model - model properties will become columns for the table
         }
     }
 }
