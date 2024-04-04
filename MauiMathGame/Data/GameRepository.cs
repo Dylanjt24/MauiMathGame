@@ -15,7 +15,7 @@ namespace MauiMathGame.Data
 
         public void Init()
         {
-            conn = new SQLiteConnection(_dbPath);
+            conn = new SQLiteConnection(_dbPath);  // Create instance of SQLite connection
             conn.CreateTable<Game>();  // Creates a table based on the specified Game model - model properties will become columns for the table
         }
 
@@ -23,6 +23,12 @@ namespace MauiMathGame.Data
         {
             Init(); // Run Init method to create the table if it doesn't already exist
             return conn.Table<Game>().ToList(); // Retrieve games from table and convert it to a list
+        }
+
+        public void Add(Game game)
+        {
+            conn = new SQLiteConnection(_dbPath);
+            conn.Insert(game); // Insert game into the table
         }
     }
 }
