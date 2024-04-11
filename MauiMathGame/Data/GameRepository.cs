@@ -30,5 +30,11 @@ namespace MauiMathGame.Data
             conn = new SQLiteConnection(_dbPath);
             conn.Insert(game); // Insert game into the table
         }
+
+        public void Delete(int id)
+        {
+            conn = new SQLiteConnection(_dbPath);
+            conn.Delete(new { Id = id }); // Delete record based on Id primary key
+        }
     }
 }
