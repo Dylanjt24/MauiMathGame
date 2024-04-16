@@ -1,3 +1,5 @@
+using MauiMathGame.Models;
+
 namespace MauiMathGame;
 
 public partial class GamePage : ContentPage
@@ -88,10 +90,26 @@ public partial class GamePage : ContentPage
 
     private void GameOver()
     {
+        // Utilizes GameOperation enum in Game.cs to set game operation based on button clicked
+        GameOperation gameOperation = GameType switch
+        {
+            "Addition" => GameOperation.Addition,
+            "Subtraction" => GameOperation.Subtraction,
+            "Multiplication" => GameOperation.Multiplication,
+            "Division" => GameOperation.Division
+        };
+
         // Make question area invisible when game ends, and make back to menu button visible
         QuestionArea.IsVisible = false;
         BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! You got {score} out of {totalQuestions} correct.";
+
+        App.GameRepository.Add(new Game
+        {
+            Type = gameOperation,
+            Score = score,
+            DatePlayed = DateTime.Now
+        });
     }
 
     private void ProcessAnswer(bool isCorrect)
