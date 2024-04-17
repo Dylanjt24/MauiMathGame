@@ -104,6 +104,7 @@ public partial class GamePage : ContentPage
         BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! You got {score} out of {totalQuestions} correct.";
 
+        // Add game to the GameRepository to keep track of games played
         App.GameRepository.Add(new Game
         {
             Type = gameOperation,
