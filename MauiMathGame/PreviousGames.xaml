@@ -9,10 +9,12 @@
             HorizontalOptions="Center" />
     </VerticalStackLayout>-->
     <ScrollView>
+        <!--Scrolls if content overflows-->
         <VerticalStackLayout>
             <CollectionView x:Name="gamesList">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
+                        <!--Blueprint of the UI element for each list object-->
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -24,10 +26,13 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
+                            <!--Text is bound to a property of the Game model-->
                             <Label Grid.Column="0" Text="{Binding DatePlayed}" />
                             <Label Grid.Column="1" Text="{Binding Type}" />
                             <Label Grid.Column="2" Text="{Binding Score}" />
-                            <Button Grid.Column="3" Text="Delete" />
+                            <Button Grid.Column="3" Text="Delete"
+                                    BindingContext="{Binding Id}"/>
+                            <!--Bind button to Id of row you want to delete-->
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
