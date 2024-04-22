@@ -9,4 +9,11 @@ public partial class PreviousGames : ContentPage
         InitializeComponent();
         gamesList.ItemsSource = App.GameRepository.GetAllGames(); // Get all played games and display them in the gamesList XAML visual component
     }
+
+    private void OnDelete(object sender, EventArgs e)
+    {
+        Button button = (Button)sender;
+        App.GameRepository.Delete((int)button.BindingContext); // Grab Id button is bound to and pass it to the Delete method
+        gamesList.ItemsSource = App.GameRepository.GetAllGames(); // Call GetAllGames to refresh games list after deletion
+    }
 }

@@ -17,7 +17,7 @@
                         <!--Blueprint of the UI element for each list object-->
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="44"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*" />
@@ -30,8 +30,7 @@
                             <Label Grid.Column="0" Text="{Binding DatePlayed}" />
                             <Label Grid.Column="1" Text="{Binding Type}" />
                             <Label Grid.Column="2" Text="{Binding Score}" />
-                            <Button Grid.Column="3" Text="Delete"
-                                    BindingContext="{Binding Id}"/>
+                            <Button Grid.Column="3" Text="Delete" Clicked="OnDelete" BindingContext="{Binding Id}"/>
                             <!--Bind button to Id of row you want to delete-->
                         </Grid>
                     </DataTemplate>
