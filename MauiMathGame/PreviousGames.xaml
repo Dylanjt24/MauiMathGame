@@ -10,7 +10,7 @@
     </VerticalStackLayout>-->
     <ScrollView>
         <!--Scrolls if content overflows-->
-        <VerticalStackLayout>
+        <VerticalStackLayout Padding="200,100,200,50">
             <CollectionView x:Name="gamesList">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -27,9 +27,9 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Text is bound to a property of the Game model-->
-                            <Label Grid.Column="0" Text="{Binding DatePlayed}" />
-                            <Label Grid.Column="1" Text="{Binding Type}" />
-                            <Label Grid.Column="2" Text="{Binding Score}" />
+                            <Label Grid.Column="0" Text="{Binding DatePlayed}" FontSize="16" />
+                            <Label Grid.Column="1" Text="{Binding Type}" FontSize="16" />
+                            <Label Grid.Column="2" Text="{Binding Score}" FontSize="16" />
                             <Button Grid.Column="3" Text="Delete" Clicked="OnDelete" BindingContext="{Binding Id}"/>
                             <!--Bind button to Id of row you want to delete-->
                         </Grid>
