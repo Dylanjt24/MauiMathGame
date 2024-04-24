@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiMathGame.GamePage"
-             Title="GamePage">
+             Title="GamePage"
+             BackgroundImageSource="greenboard.jpg">
     <VerticalStackLayout
         Padding="100"
         Spacing="25">
@@ -10,17 +11,20 @@
         <VerticalStackLayout
             x:Name="QuestionArea"
             Spacing="25">
-            
+
             <Label 
             x:Name="QuestionLabel"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            FontSize="32"/>
+            FontSize="80"/>
 
             <!--Allow user to input answer-->
             <Entry
             x:Name="AnswerEntry"
-            HorizontalOptions="Center">
+            HorizontalOptions="Center"
+            BackgroundColor="DarkOliveGreen"
+            FontSize="50"
+            TextColor="White">
             </Entry>
 
             <!--Button to submit answer-->
@@ -28,7 +32,8 @@
             x:Name="SubmitAnswer"
             Text="Answer"
             Clicked="OnAnswerSubmitted"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            FontSize="32"/>
 
             <!--Label that holds message to inform user if their answer is correct-->
             <Label 
@@ -43,7 +48,7 @@
             x:Name="GameOverLabel"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            FontSize="32" />
+            FontSize="50" />
 
         <!--Button to bring user back to menu after game ends-->
         <Button 
@@ -51,6 +56,7 @@
             x:Name="BackToMenuBtn"
             Text="Back to Menu"
             Clicked="OnBackToMenu"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            FontSize="32"/>
     </VerticalStackLayout>
 </ContentPage>
