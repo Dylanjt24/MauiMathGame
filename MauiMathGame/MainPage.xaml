@@ -14,20 +14,9 @@
                 FontSize="50"
                 HorizontalOptions="Center"/>
 
-            <Grid
-            RowSpacing="5"
-            ColumnSpacing="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+            <!--Second row will have height of 150, all four columns will be same size-->
+            <Grid RowSpacing="20" RowDefinitions="*,150"
+                  ColumnDefinitions="*,*,*,*">
 
                 <!--Buttons to select game-->
                 <Button Grid.Column="0"
