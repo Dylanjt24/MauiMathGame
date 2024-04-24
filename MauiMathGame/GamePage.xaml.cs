@@ -25,14 +25,14 @@ public partial class GamePage : ContentPage
     {
         // Switch statement defines which operation symbol is used based on the GameType
         // _ covers all options that weren't already covered; essentially acts like the "default"
-        var gameOperand = GameType switch
-        {
-            "Addition" => "+",
-            "Subtraction" => "-",
-            "Multiplication" => "*",
-            "Division" => "/",
-            _ => ""
-        };
+        //var gameOperand = GameType switch
+        //{
+        //    "Addition" => "+",
+        //    "Subtraction" => "-",
+        //    "Multiplication" => "*",
+        //    "Division" => "/",
+        //    _ => ""
+        //};
 
         var random = new Random();
         // Ternary operator - (condition) ? expressionTrue : expressionFalse
@@ -49,7 +49,7 @@ public partial class GamePage : ContentPage
         }
 
         // Replace QuestionLabel text with the math equation to solve
-        QuestionLabel.Text = $"{firstNumber} {gameOperand} {secondNumber}";
+        QuestionLabel.Text = $"{firstNumber} {GameType} {secondNumber}";
     }
 
     private void OnAnswerSubmitted(object sender, EventArgs e)
@@ -61,16 +61,16 @@ public partial class GamePage : ContentPage
         // Checks whether or not the answer was correct based on the GameType being played
         switch (GameType)
         {
-            case "Addition":
+            case "+":
                 isCorrect = answer == firstNumber + secondNumber;
                 break;
-            case "Subtraction":
+            case "-":
                 isCorrect = answer == firstNumber - secondNumber;
                 break;
-            case "Multiplication":
+            case "×":
                 isCorrect = answer == firstNumber * secondNumber;
                 break;
-            case "Division":
+            case "÷":
                 isCorrect = answer == firstNumber / secondNumber;
                 break;
         }
@@ -93,10 +93,10 @@ public partial class GamePage : ContentPage
         // Utilizes GameOperation enum in Game.cs to set game operation based on button clicked
         GameOperation gameOperation = GameType switch
         {
-            "Addition" => GameOperation.Addition,
-            "Subtraction" => GameOperation.Subtraction,
-            "Multiplication" => GameOperation.Multiplication,
-            "Division" => GameOperation.Division
+            "+" => GameOperation.Addition,
+            "-" => GameOperation.Subtraction,
+            "×" => GameOperation.Multiplication,
+            "÷" => GameOperation.Division
         };
 
         // Make question area invisible when game ends, and make back to menu button visible
