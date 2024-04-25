@@ -12,6 +12,12 @@
     <ScrollView>
         <!--Scrolls if content overflows-->
         <VerticalStackLayout Padding="50,100,50,50">
+            <Grid ColumnDefinitions="*,*,*,*"
+                  RowDefinitions="50">
+                <Label Grid.Column="0" Text="Date" FontSize="32" TextDecorations="Underline"/>
+                <Label Grid.Column="1" Text="Type" FontSize="32" TextDecorations="Underline"/>
+                <Label Grid.Column="2" Text="Score" FontSize="32" TextDecorations="Underline"/>
+            </Grid>
             <CollectionView x:Name="gamesList">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -20,10 +26,10 @@
                               RowDefinitions="50">
 
                             <!--Text is bound to a property of the Game model-->
-                            <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat='{0:d}'}" FontSize="16" />
-                            <Label Grid.Column="1" Text="{Binding Type}" FontSize="16" />
-                            <Label Grid.Column="2" Text="{Binding Score}" FontSize="16" />
-                            <Button Grid.Column="3" Text="Delete" Margin="3" Clicked="OnDelete" BindingContext="{Binding Id}"/>
+                            <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat='{0:d}'}" FontSize="32" />
+                            <Label Grid.Column="1" Text="{Binding Type}" FontSize="32" />
+                            <Label Grid.Column="2" Text="{Binding Score}" FontSize="32" />
+                            <ImageButton Source="trash.png" Grid.Column="3" Clicked="OnDelete" BindingContext="{Binding Id}" MaximumHeightRequest="40" MaximumWidthRequest="70"/>
                             <!--Bind button to Id of row you want to delete-->
                         </Grid>
                     </DataTemplate>
