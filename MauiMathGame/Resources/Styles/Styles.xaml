@@ -113,7 +113,7 @@
     <Style TargetType="Entry">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontFamily" Value="CaveatBrushRegular"/>
         <Setter Property="FontSize" Value="14" />
         <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
         <Setter Property="MinimumHeightRequest" Value="44"/>
@@ -140,9 +140,12 @@
 
     <Style TargetType="ImageButton">
         <Setter Property="Opacity" Value="1" />
+        <!--Use default colors set in Colors.xaml-->
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"/>
         <Setter Property="BorderColor" Value="Transparent"/>
         <Setter Property="BorderWidth" Value="0"/>
-        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="14, 10"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -161,9 +164,9 @@
     </Style>
 
     <Style TargetType="Label">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontFamily" Value="CaveatBrushRegular" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>

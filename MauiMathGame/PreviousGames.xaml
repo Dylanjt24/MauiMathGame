@@ -29,7 +29,7 @@
                             <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat='{0:d}'}" FontSize="32" />
                             <Label Grid.Column="1" Text="{Binding Type}" FontSize="32" />
                             <Label Grid.Column="2" Text="{Binding Score}" FontSize="32" />
-                            <ImageButton Source="trash.png" Grid.Column="3" Clicked="OnDelete" BindingContext="{Binding Id}" MaximumHeightRequest="40" MaximumWidthRequest="70"/>
+                            <ImageButton Source="trash.png" Grid.Column="3" Clicked="OnDelete" BindingContext="{Binding Id}" MaximumHeightRequest="44" MaximumWidthRequest="70"/>
                             <!--Bind button to Id of row you want to delete-->
                         </Grid>
                     </DataTemplate>
